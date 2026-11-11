@@ -4,9 +4,9 @@ Core PyTorch implementation of PROFIT for multivariate time-series forecasting.
 The model selects and aligns phase-correlated histories, decomposes them into DCT
 frequency bands, and combines patch representations within each band.
 
-`models/PAFNet.py` contains the core architecture; `models/PROFITAux.py` adds
-the residual readout and centered low-rank channel adapter. Original module
-names are retained for source and checkpoint compatibility.
+`models/PROFIT.py` contains the core architecture; `models/PROFITAux.py` adds
+the residual readout and centered low-rank channel adapter. Both expose a
+`PROFIT` class; `Model` remains available as an alias.
 
 ## Usage
 
@@ -16,7 +16,7 @@ from the repository root. This example shows the forward interface:
 ```python
 from types import SimpleNamespace
 import torch
-from models.PROFITAux import Model
+from models.PROFITAux import PROFIT
 
 cfg = SimpleNamespace(
     enc_in=11, seq_len=360, pred_len=24,
@@ -29,7 +29,7 @@ cfg = SimpleNamespace(
     aux_norm="core", aux_head="summary_residual",
     aux_head_hidden=16, aux_head_dropout=0.1, aux_channel_rank=4,
 )
-model = Model(cfg).eval()
+model = PROFIT(cfg).eval()
 with torch.no_grad():
     prediction = model(torch.randn(2, 360, 11))
 print(prediction.shape)  # torch.Size([2, 24, 11])

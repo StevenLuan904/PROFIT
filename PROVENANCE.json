@@ -1,34 +1,54 @@
 {
   "model_source": "PROFIT_method_core supplied 2026-11-05",
-  "scope": "Unmodified model implementation and its direct layer dependencies only.",
+  "scope": "Model implementation and direct layer dependencies, with naming-only changes to use PROFIT consistently.",
+  "naming_changes": [
+    "Core model and backbone filenames, imports, class names and exported identifiers use PROFIT.",
+    "The primary and auxiliary model classes are named PROFIT; Model is an interface alias.",
+    "Mathematical operations, parameter names and state_dict keys are unchanged.",
+    "The inherited PatchTST utility layer filename and its neutral helper names are retained."
+  ],
   "core_files": [
     {
       "path": "models/__init__.py",
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      "original_source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "released_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "changes": "Unchanged."
     },
     {
-      "path": "models/PAFNet.py",
-      "sha256": "f872f4ff5f3f6e3bb35fdbe64632b28010e1b04fd67f929d719893a1dfd36c3f"
+      "path": "models/PROFIT.py",
+      "original_source_sha256": "f872f4ff5f3f6e3bb35fdbe64632b28010e1b04fd67f929d719893a1dfd36c3f",
+      "released_sha256": "adb79043db0c3eefff194b4b47d22d9da8fc58ebb5bccd0add2d2daa48b7d70a",
+      "changes": "File/module/class identifiers and interface alias only."
     },
     {
       "path": "models/PROFITAux.py",
-      "sha256": "e8e75d33be8d44a92d84344c44ae8ef329457be62613fd6bcf3fbeb5c45fe83b"
+      "original_source_sha256": "e8e75d33be8d44a92d84344c44ae8ef329457be62613fd6bcf3fbeb5c45fe83b",
+      "released_sha256": "8677f93f5ae7e495d5b959fbb1311d2d0e8b2f37379dd4df9e2b5de9e97013a2",
+      "changes": "File/module/class identifiers and interface alias only."
     },
     {
       "path": "layers/__init__.py",
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      "original_source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "released_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "changes": "Unchanged."
     },
     {
-      "path": "layers/PAFNet_backbone.py",
-      "sha256": "2e854da721138773d411aabcfbd3ba270846077900177fb3391a11fd01041d6f"
+      "path": "layers/PROFIT_backbone.py",
+      "original_source_sha256": "2e854da721138773d411aabcfbd3ba270846077900177fb3391a11fd01041d6f",
+      "released_sha256": "f5181d4fa5fa6484eb32ab080467297f2ccb76dbce626347e1621fb053785365",
+      "changes": "File/module/class identifiers and interface alias only."
     },
     {
       "path": "layers/PatchTST_layers.py",
-      "sha256": "21c06c70a90c60ee2a269b5c600c702834dea22cdfd72915e6b0f8b4a28db3f6"
+      "original_source_sha256": "21c06c70a90c60ee2a269b5c600c702834dea22cdfd72915e6b0f8b4a28db3f6",
+      "released_sha256": "21c06c70a90c60ee2a269b5c600c702834dea22cdfd72915e6b0f8b4a28db3f6",
+      "changes": "Unchanged."
     },
     {
       "path": "layers/RevIN.py",
-      "sha256": "1e08d0b3679f4ef79ac7f98a7f719f8d7f8a04595022ed34f702c7d70c0c4d90"
+      "original_source_sha256": "1e08d0b3679f4ef79ac7f98a7f719f8d7f8a04595022ed34f702c7d70c0c4d90",
+      "released_sha256": "1e08d0b3679f4ef79ac7f98a7f719f8d7f8a04595022ed34f702c7d70c0c4d90",
+      "changes": "Unchanged."
     }
   ],
   "license": "LICENSE copied verbatim from the accompanying source snapshot.",
