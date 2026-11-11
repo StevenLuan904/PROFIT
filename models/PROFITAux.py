@@ -11,7 +11,7 @@ import math
 import torch
 from torch import nn
 
-from models.PAFNet import Model as CoreModel
+from models.PROFIT import PROFIT as CoreModel
 
 
 class ShrinkRevIN(nn.Module):
@@ -158,7 +158,7 @@ class CenteredLinearChannelReadout(nn.Module):
         return prediction + delta
 
 
-class Model(CoreModel):
+class PROFIT(CoreModel):
     """Frozen-core model with explicitly opted-in auxiliary substitutions."""
 
     def __init__(self, configs, *args, **kwargs):
@@ -293,3 +293,7 @@ class Model(CoreModel):
         else:
             standardized_delta = normalized_delta
         return standardized_delta.square().mean()
+
+
+# Standard forecasting interface alias.
+Model = PROFIT
