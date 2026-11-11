@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+data/
+runs/
+results/
+logs/
+checkpoints/
+*.pt
+*.pth
+*.ckpt
+*.npz
+*.npy
+.env
+.venv/
