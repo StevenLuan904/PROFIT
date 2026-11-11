@@ -1,6 +1,19 @@
 {
   "model_source": "PROFIT_method_core supplied 2026-11-05",
+  "scope": "Unmodified model implementation and its direct layer dependencies only.",
   "core_files": [
+    {
+      "path": "models/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "models/PAFNet.py",
+      "sha256": "f872f4ff5f3f6e3bb35fdbe64632b28010e1b04fd67f929d719893a1dfd36c3f"
+    },
+    {
+      "path": "models/PROFITAux.py",
+      "sha256": "e8e75d33be8d44a92d84344c44ae8ef329457be62613fd6bcf3fbeb5c45fe83b"
+    },
     {
       "path": "layers/__init__.py",
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
@@ -16,40 +29,16 @@
     {
       "path": "layers/RevIN.py",
       "sha256": "1e08d0b3679f4ef79ac7f98a7f719f8d7f8a04595022ed34f702c7d70c0c4d90"
-    },
-    {
-      "path": "losses.py",
-      "sha256": "4284782023b0eca50dd23703e3f19ca02d08b71c3a214c16f9367109f8ec59ba"
-    },
-    {
-      "path": "models/__init__.py",
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
-    },
-    {
-      "path": "models/PAFNet.py",
-      "sha256": "f872f4ff5f3f6e3bb35fdbe64632b28010e1b04fd67f929d719893a1dfd36c3f"
-    },
-    {
-      "path": "models/PROFITAux.py",
-      "sha256": "e8e75d33be8d44a92d84344c44ae8ef329457be62613fd6bcf3fbeb5c45fe83b"
-    },
-    {
-      "path": "quality_query_execution.py",
-      "sha256": "5f38a028db875e7082f548a03a0c0d4220319fa4a8db4a3cff1ebce683363376"
-    },
-    {
-      "path": "quality_row_execution.py",
-      "sha256": "e1b666227ecc87b6814e026447f74d8fb2304bc577e59a51ac549ba1fe1f90d2"
     }
   ],
-  "canonical_training_source_sha256": "d793dc16b07b1f388afc3b8a9fc4096ff959ae1bc581461682a4adff9126c0da",
-  "training_portability_changes": [
-    "Move the exact canonical prepare() function to data_provider/data_loader.py; default data root becomes local.",
-    "Include the data provider in source fingerprinting.",
-    "Keep only PROFIT model-construction branches; no baseline vendors are bundled.",
-    "Recompute fixed MP thresholds from actual standardized TRAIN rows using the original equal-H weighted-MAD function instead of private campaign artifacts.",
-    "Public configs retain profile hyperparameters/splits and remove private deployment and campaign metadata.",
-    "The supplied core implementation test only changes source/config/output paths."
-  ],
-  "claims": "No datasets, checkpoints, paper files or historical result artifacts are distributed. Fresh execution is not historical checkpoint replay."
+  "license": "LICENSE copied verbatim from the accompanying source snapshot.",
+  "omitted": [
+    "training entrypoint",
+    "dataset loader",
+    "training loss/calibration",
+    "benchmark configs",
+    "query execution wrappers",
+    "tests",
+    "plotting"
+  ]
 }
